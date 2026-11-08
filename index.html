@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>textrai - ai deployment company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a0a0b;--ink:#f2f0ea;--dim:#a6a49d;--line:#222226;--accent:#e8c15a}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;font-weight:300;line-height:1.5;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--accent);color:#000}
+  a{color:inherit}
+  .mono{font-family:'Space Mono',monospace}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:22px 5vw;mix-blend-mode:difference}
+  .wordmark{font-size:15px;letter-spacing:.35em;text-decoration:none}
+  .nav-cta{font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,.6);padding:9px 18px;border-radius:99px;transition:.25s}
+  .nav-cta:hover{background:#fff;color:#000}
+
+  header{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:0 5vw;overflow:hidden}
+  #field{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .hero-inner{position:relative;z-index:2;max-width:1200px}
+  .kicker{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.22em;color:var(--dim);margin-bottom:34px}
+  .kicker .dot{color:var(--accent)}
+  h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(44px,8.2vw,116px);line-height:1.02;letter-spacing:-.01em}
+  h1 em{font-style:italic;color:var(--accent)}
+  .hero-sub{margin-top:38px;max-width:460px;color:var(--dim);font-size:16px}
+  .hero-cta{margin-top:44px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:14px 26px;border-radius:99px;transition:.25s;display:inline-block}
+  .btn-solid{background:var(--ink);color:#0a0a0b}
+  .btn-solid:hover{background:var(--accent)}
+  .btn-ghost{border:1px solid #45454c;color:#cfcdc6}
+  .btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
+  .hero-status{position:absolute;bottom:28px;left:5vw;right:5vw;display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--dim);z-index:2}
+
+  section{padding:110px 5vw;border-top:1px solid var(--line)}
+  .sec-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:64px;gap:20px;flex-wrap:wrap}
+  .sec-num{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.22em;color:var(--dim)}
+  h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,5vw,62px);line-height:1.05}
+  h2 em{font-style:italic;color:var(--accent)}
+
+  .manifesto p{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(25px,3.5vw,44px);line-height:1.32;max-width:1020px;font-weight:400}
+  .manifesto p+p{margin-top:1.2em;color:var(--dim)}
+  .manifesto em{font-style:italic;color:var(--accent)}
+
+  .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--line)}
+  .work-card{background:var(--bg);padding:44px 36px 52px;text-decoration:none;display:block;position:relative;transition:background .3s}
+  .work-card:hover{background:#111113}
+  .work-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;display:block}
+  .work-card h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;margin-bottom:12px}
+  .work-card p{color:var(--dim);font-size:14px;max-width:340px}
+  .work-arrow{position:absolute;bottom:40px;right:36px;font-size:20px;color:var(--dim);transition:.3s}
+  .work-card:hover .work-arrow{color:var(--accent);transform:translate(4px,-4px)}
+  .work-note{margin-top:26px;font-size:12px;color:var(--dim)}
+
+  .offer{display:grid;grid-template-columns:80px 1fr auto;gap:34px;align-items:center;padding:52px 0;border-bottom:1px solid var(--line)}
+  .offer-num{font-family:'Instrument Serif',Georgia,serif;font-size:26px;color:var(--dim);font-style:italic}
+  .offer-body h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(26px,3.4vw,42px);margin-bottom:10px}
+  .offer-body p{color:var(--dim);font-size:15px;max-width:580px}
+  .stage{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-top:12px;display:block}
+  .stage b{color:var(--accent);font-weight:400}
+  .offer-cta{white-space:nowrap;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:1px solid #45454c;padding:13px 24px;border-radius:99px;color:#cfcdc6;transition:.25s}
+  .offer-cta:hover{border-color:var(--accent);color:var(--accent)}
+  @media(max-width:760px){.offer{grid-template-columns:1fr;gap:16px}.offer-cta{justify-self:start}}
+
+  .moment{position:relative;overflow:hidden;padding:130px 5vw}
+  .moment-bg{position:absolute;inset:0;background:
+    radial-gradient(55% 85% at 78% 25%,rgba(232,193,90,.12),transparent 60%),
+    radial-gradient(45% 65% at 18% 82%,rgba(90,140,232,.09),transparent 60%)}
+  .moment-inner{position:relative;z-index:2;max-width:900px}
+  .moment h2{margin:22px 0 26px}
+  .moment p{color:var(--dim);max-width:540px;font-size:16px;margin-bottom:36px}
+
+  .contact-inner{text-align:center;max-width:900px;margin:0 auto}
+  .contact-inner h2{margin:22px 0}
+  .contact-inner p{color:var(--dim);margin-bottom:44px}
+  footer{border-top:1px solid var(--line);padding:36px 5vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--dim)}
+  footer a{color:var(--dim)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="wordmark" href="#top">textrai</a>
+  <a class="nav-cta" href="https://wa.me/917888686610?text=hi%20textrai%20-%20saw%20the%20site%2C%20want%20to%20talk" target="_blank" rel="noopener">start a conversation</a>
+</nav>
+
+<header id="top">
+  <canvas id="field"></canvas>
+  <div class="hero-inner">
+    <p class="kicker">textrai <span class="dot">/</span> ai deployment company</p>
+    <h1>We deploy <em>AI</em> into businesses<br>that don't have a <em>tech team</em>.</h1>
+    <p class="hero-sub">Not another tool to figure out. We build it, deploy it and run it with you - and we make you look like the future of your market while we're at it.</p>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="#work">see the work</a>
+      <a class="btn btn-ghost" href="https://wa.me/917888686610?text=hi%20textrai%20-%20saw%20the%20site%2C%20want%20to%20talk" target="_blank" rel="noopener">whatsapp us</a>
+    </div>
+  </div>
+  <div class="hero-status"><span>status: deploying</span><span>bangalore</span></div>
+</header>
+
+<section class="manifesto">
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-num">the point</span></div>
+  <p>Your next customer decides in seconds. We make those seconds count - an AI that answers, a presence that convinces, systems that follow up when you can't.</p>
+  <p>Built, deployed and run for you. No dashboards to learn, no team to hire. A small number of things, made unreasonably well.</p>
+</section>
+
+<section id="work">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Proof, <em>not promises</em></h2></div>
+  <div class="work-grid">
+    <a class="work-card" href="https://kulraj69.github.io/site-demos/jss.html" target="_blank" rel="noopener">
+      <span class="work-tag">concept demo / real estate</span>
+      <h3>J S S Real Estate</h3>
+      <p>A Bengaluru agency rated 5.0 whose website address doesn't resolve. We built the homepage it deserves - unsolicited, to show the difference.</p>
+      <span class="work-arrow">&#8599;</span>
+    </a>
+    <a class="work-card" href="https://kulraj69.github.io/site-demos/realty-corp.html" target="_blank" rel="noopener">
+      <span class="work-tag">concept demo / real estate</span>
+      <h3>Realty Corp</h3>
+      <p>In business since 1998, generic title tag and no description for search. A dark, editorial redesign around its real listings and legacy.</p>
+      <span class="work-arrow">&#8599;</span>
+    </a>
+    <a class="work-card" href="https://kulraj69.github.io/site-demos/mc-reddy.html" target="_blank" rel="noopener">
+      <span class="work-tag">concept demo / real estate</span>
+      <h3>M C Reddy</h3>
+      <p>Over a thousand Google reviews, no site to send people to. A clean, enquiry-first concept homepage.</p>
+      <span class="work-arrow">&#8599;</span>
+    </a>
+  </div>
+  <p class="work-note">Unsolicited concept demos, built from public business details to show our standard. Not client work; no results claimed for them yet. Demo photos are illustrative.</p>
+</section>
+
+<section id="offers">
+  <div class="sec-head"><span class="sec-num">03</span><h2>What we <em>deploy</em></h2></div>
+
+  <div class="offer">
+    <span class="offer-num">i.</span>
+    <div class="offer-body">
+      <h3>Voice agents</h3>
+      <p>AI that picks up calls and enquiries in your business's voice - bookings, questions, follow-ups - so a late-night message gets an answer, not silence.</p>
+      <span class="stage">stage: <b>working prototypes</b> - we'll demo one live before you decide anything</span>
+    </div>
+    <a class="offer-cta" href="https://wa.me/917888686610?text=hi%20textrai%20-%20interested%20in%20voice%20agents" target="_blank" rel="noopener">ask about this</a>
+  </div>
+
+  <div class="offer">
+    <span class="offer-num">ii.</span>
+    <div class="offer-body">
+      <h3>Automation</h3>
+      <p>Sales follow-ups, support triage, hiring screens, ops workflows - the boring work, running quietly in the background.</p>
+      <span class="stage">stage: <b>working prototypes</b> on sample data - built to your process before anything goes live</span>
+    </div>
+    <a class="offer-cta" href="https://wa.me/917888686610?text=hi%20textrai%20-%20interested%20in%20automation" target="_blank" rel="noopener">ask about this</a>
+  </div>
+
+  <div class="offer">
+    <span class="offer-num">iii.</span>
+    <div class="offer-body">
+      <h3>Presence</h3>
+      <p>Design-led websites built around one job: giving customers a reason to choose you, and an obvious way to reach you.</p>
+      <span class="stage">stage: <b>deploying now</b> - concept demos above, full sites on request</span>
+    </div>
+    <a class="offer-cta" href="https://wa.me/917888686610?text=hi%20textrai%20-%20interested%20in%20a%20website" target="_blank" rel="noopener">ask about this</a>
+  </div>
+</section>
+
+<section class="moment">
+  <div class="moment-bg"></div>
+  <div class="moment-inner">
+    <span class="sec-num">04 / one example</span>
+    <h2>A water park, <em>answered at 11pm</em></h2>
+    <p>A family messages after hours: are you open tomorrow, what does a group booking cost? The AI answers right away, captures the booking request and hands it to your team to confirm. Fewer enquiries lost to a closed ticket counter. One example of what deployment could look like - we'd shape it around how your park actually works.</p>
+    <a class="btn btn-solid" href="https://wa.me/917888686610?text=hi%20textrai%20-%20water%20park%20enquiry" target="_blank" rel="noopener">see it for your business</a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-inner">
+    <span class="sec-num">05</span>
+    <h2>Make something <em>worth remembering</em></h2>
+    <p>One conversation is enough to know if we're your people.</p>
+    <div class="hero-cta" style="justify-content:center">
+      <a class="btn btn-solid" href="https://wa.me/917888686610?text=hi%20textrai%20-%20saw%20the%20site%2C%20want%20to%20talk" target="_blank" rel="noopener">whatsapp +91 78886 86610</a>
+      <a class="btn btn-ghost" href="mailto:contact@kulrajsabharwal.com">contact@kulrajsabharwal.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>textrai / bangalore</span>
+  <span>concept demos labeled + unsolicited / illustrative photos only</span>
+</footer>
+
+<script>
+const c=document.getElementById('field'),x=c.getContext('2d');
+let w,h,orbs=[];
+function size(){w=c.width=c.offsetWidth*devicePixelRatio;h=c.height=c.offsetHeight*devicePixelRatio}
+function init(){orbs=[];const N=5;
+  for(let i=0;i<N;i++){orbs.push({
+    x:Math.random()*w,y:Math.random()*h,
+    r:(0.25+Math.random()*0.35)*Math.min(w,h),
+    dx:(Math.random()-.5)*.12*devicePixelRatio,dy:(Math.random()-.5)*.12*devicePixelRatio,
+    hue:i%2?[232,193,90]:[110,140,220],a:.05+Math.random()*.06})}}
+function frame(){
+  x.clearRect(0,0,w,h);
+  for(const o of orbs){
+    o.x+=o.dx;o.y+=o.dy;
+    if(o.x<-o.r)o.x=w+o.r;if(o.x>w+o.r)o.x=-o.r;
+    if(o.y<-o.r)o.y=h+o.r;if(o.y>h+o.r)o.y=-o.r;
+    const g=x.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r);
+    g.addColorStop(0,`rgba(${o.hue[0]},${o.hue[1]},${o.hue[2]},${o.a})`);
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    x.fillStyle=g;x.beginPath();x.arc(o.x,o.y,o.r,0,7);x.fill();
+  }
+  requestAnimationFrame(frame);
+}
+size();init();frame();
+addEventListener('resize',()=>{size();init()});
+</script>
+</body>
+</html>
